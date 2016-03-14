@@ -30,9 +30,15 @@ describe('html-drip-char', function() {
 
 	describe('.fromFile()', function() {
 		it('should get unique characters from a file at given path', function(done) {
-
 			var htmlFile = path.join(__dirname, 'test.html');
 			htmlDripChar.fromFile(htmlFile, {}, function(err, text) {
+				should(text).be.exactly("PargphsAtveocumjdlb.Sikn,LyqGTx1C:69€7%32504wIMJDF8BfE-!(_'){[#]};");
+				done()
+			});
+		});
+		it('should work well without options', function(done) {
+			var htmlFile = path.join(__dirname, 'test.html');
+			htmlDripChar.fromFile(htmlFile, function(err, text) {
 				should(text).be.exactly("PargphsAtveocumjdlb.Sikn,LyqGTx1C:69€7%32504wIMJDF8BfE-!(_'){[#]};");
 				done()
 			});
