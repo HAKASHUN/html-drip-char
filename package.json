@@ -31,9 +31,5 @@
 		"istanbul": "*",
 		"event-stream": "*",
 		"should": "~2.1.0"
-	},
-  "preferGlobal": false,
-  "bin": {
-    "html-drip-char": "./bin/cli"
-  }
+	}
 }
