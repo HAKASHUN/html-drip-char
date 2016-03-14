@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "html -> {{drip}} -> text",
   "main": "lib/html-drip-char.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+	"scripts": {
+		"test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
+		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+	},
+	"repository": {
     "type": "git",
     "url": "git+https://github.com/HAKASHUN/html-drip-char.git"
   },
@@ -23,6 +24,14 @@
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4"
   },
+	"devDependencies": {
+		"mocha": "*",
+		"coveralls": "*",
+		"mocha-lcov-reporter": "*",
+		"istanbul": "*",
+		"event-stream": "*",
+		"should": "~2.1.0"
+	},
   "preferGlobal": false,
   "bin": {
     "html-drip-char": "./bin/cli"
